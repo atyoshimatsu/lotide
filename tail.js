@@ -1,7 +1,12 @@
 const assertEqual = function(actual, expected) {
-  return actual === expected
-    ? `\u2705 Assertion Passed: [${actual}] === [${expected}]`
-    : `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
+  const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
+  const failed = `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
+
+  if (Array.isArray(actual)) {
+    return actual.every((elm, index) => elm === expected[index]) ? passed : failed;
+  }
+
+  return actual === expected ? passed : failed;
 };
 
 const tail = function(arr) {
@@ -14,7 +19,3 @@ const tail = function(arr) {
   }
   return newArr;
 };
-
-console.log(assertEqual(tail([]), []));
-console.log(assertEqual(tail([1]), []));
-console.log(assertEqual(tail([1 ,2, 3]), [2, 3]));
