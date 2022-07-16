@@ -2,9 +2,9 @@ const assertEqual = function(actual, expected) {
   const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
   const failed = `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
 
-  if (Array.isArray(actual)) {
-    return actual.every((elm, index) => elm === expected[index]) ? passed : failed;
-  }
+  const result = Array.isArray(actual)
+    ? actual.every((elm, index) => elm === expected[index])
+    : actual === expected;
 
-  return actual === expected ? passed : failed;
+  return result ? passed : failed;
 };
