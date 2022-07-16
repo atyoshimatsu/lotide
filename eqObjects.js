@@ -1,10 +1,3 @@
-const assertEqual = function(actual, expected) {
-  const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
-  const failed = `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
-
-  return actual === expected ? passed : failed;
-};
-
 const eqArrays = function(actual, expected) {
   if (!Array.isArray(actual) || !Array.isArray(expected)) {
     return false;
@@ -26,7 +19,7 @@ const eqObjects = function(obj1, obj2) {
 
   return keys1.every(key => Array.isArray(obj1[key])
     ? eqArrays(obj1[key], obj2[key])
-    : assertEqual(obj1[key], obj2[key]));
+    : obj1[key] === obj2[key]);
 };
 
 const ab = { a: "1", b: "2" };
