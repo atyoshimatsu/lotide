@@ -21,7 +21,7 @@ const assertArraysEqual = function(actual, expected) {
 const map = (array, callback) => {
   const results = [];
   for (let item of array) {
-    typeof item === 'string' ? results.push(callback(item)) : results.push('');
+    results.push(callback(item));
   }
   return results;
 };
