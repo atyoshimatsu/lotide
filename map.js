@@ -21,7 +21,7 @@ const assertArraysEqual = function(actual, expected) {
 const map = (array, callback) => {
   const results = [];
   for (let item of array) {
-    !item ? results.push('') : results.push(callback(item));
+    typeof item === 'string' ? results.push(callback(item)) : results.push('');
   }
   return results;
 };
@@ -30,9 +30,9 @@ const words1 = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words1, word => word[0]);
 const words2 = [];
 const results2 = map(words2, word => word[0]);
-const words3 = [undefined, null];
+const words3 = [undefined, null, 1, true];
 const results3 = map(words3, word => word[0]);
 
 console.log(assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']));
 console.log(assertArraysEqual(results2, []));
-console.log(assertArraysEqual(results3, ['', '']));
+console.log(assertArraysEqual(results3, ['', '', '', '']));
