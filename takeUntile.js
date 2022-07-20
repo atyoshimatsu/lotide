@@ -19,7 +19,7 @@ const assertArraysEqual = function(actual, expected) {
 
 const takeUntil = function(array, callback) {
   const index = array.map(elm => callback(elm)).findIndex(elm => elm === true);
-  return index === -1 ? [] : array.slice(0, index);
+  return index === -1 ? array : array.slice(0, index);
 };
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
@@ -36,4 +36,4 @@ console.log('---');
 
 const data3 = [',', 'a', 'b'];
 const results3 = takeUntil(data3, x => x === ':');
-console.log(assertArraysEqual(results3, []));
+console.log(assertArraysEqual(results3, [',', 'a', 'b']));
