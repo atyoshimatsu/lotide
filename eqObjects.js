@@ -1,15 +1,3 @@
-const eqArrays = function(actual, expected) {
-  if (!Array.isArray(actual) || !Array.isArray(expected)) {
-    return false;
-  }
-
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  return actual.every((elm, index) => elm === expected[index]);
-};
-
 const eqObjects = function(obj1, obj2) {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
@@ -17,9 +5,12 @@ const eqObjects = function(obj1, obj2) {
     return false;
   }
 
-  return keys1.every(key => Array.isArray(obj1[key])
-    ? eqArrays(obj1[key], obj2[key])
-    : obj1[key] === obj2[key]);
+  return keys1.map(key  => {
+    if (typeof obj1[key] === 'object') {
+      return eqObjects(obj1[key], obj2[key]);
+    }
+    return obj1[key] === obj2[key];
+  }).every(elm => elm === true);
 };
 
 const ab = { a: "1", b: "2" };
@@ -38,3 +29,7 @@ console.log(eqObjects(cd, dc)); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(eqObjects(cd, cd2)); // => false
+
+const nestedObject1 = { a: 1, b: {c: 2, e: { f: 5 }, d: { e: 4 } } };
+const nestedObject2 = { a: 1, b: {c: 2, d: { e: 4 }, e: { f: 5 } } };
+console.log(eqObjects(nestedObject1, nestedObject2)); // => true
