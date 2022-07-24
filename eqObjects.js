@@ -33,3 +33,5 @@ console.log(eqObjects(cd, cd2)); // => false
 const nestedObject1 = { a: 1, b: {c: 2, e: { f: 5 }, d: { e: 4 } } };
 const nestedObject2 = { a: 1, b: {c: 2, d: { e: 4 }, e: { f: 5 } } };
 console.log(eqObjects(nestedObject1, nestedObject2)); // => true
+
+module.exports = eqObjects;
