@@ -21,9 +21,13 @@ const tail = function(arr) {
   if (arr.length === 0 || arr.length === 1) {
     return [];
   }
-  const newArr = [];
+  const tailOfArr = [];
   for (let i = 1; i < arr.length; i += 1) {
-    newArr.push(arr[i]);
+    tailOfArr.push(arr[i]);
   }
-  return newArr;
+  return tailOfArr;
 };
+
+console.log(assertArraysEqual(tail([1 ,2 ,3]), [2, 3]));
+console.log(assertArraysEqual(tail([]), []));
+console.log(assertArraysEqual(tail([1]), []));
