@@ -1,14 +1,4 @@
-const eqArrays = function(actual, expected) {
-  if (!Array.isArray(actual) || !Array.isArray(expected)) {
-    false;
-  }
-
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  return actual.every((elm, index) => elm === expected[index]);
-};
+const eqArrays = require('./eqArrays');
 
 const assertArraysEqual = function(actual, expected) {
   const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
@@ -16,3 +6,7 @@ const assertArraysEqual = function(actual, expected) {
 
   return eqArrays(actual, expected) ? passed : failed;
 };
+
+console.log(assertArraysEqual([], []));
+console.log(assertArraysEqual([1, 2, 3], [2, 3]));
+console.log(assertArraysEqual([1, [2, 3, [4]]], [1, [2, 3, [4]]]));
