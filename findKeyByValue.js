@@ -1,7 +1,7 @@
 const assertEqual = require('./assertEqual');
 
 const findKeyByValue = function(obj, value) {
-  for (const key of Object.keys(obj)) {
+  for (const key in obj) {
     if (obj[key] === value) {
       return key;
     }
