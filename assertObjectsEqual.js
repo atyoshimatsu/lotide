@@ -8,6 +8,9 @@ const assertObjectsEqual = function(actual, expected) {
   return eqObjects(actual, expected) ? passed : failed;
 };
 
+console.log('assertObjectsEqual tests --');
 console.log(assertObjectsEqual({ a: 4, b: 5 }, { a: 4, b: 5 }));
 console.log(assertObjectsEqual({ a: 4, b: 5 }, { a: 4, b: 6 }));
 console.log(assertObjectsEqual({ a: 4, b: [5, 6] }, { a: 4, b: [5, 6] }));
+
+module.exports = assertObjectsEqual;

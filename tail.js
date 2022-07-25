@@ -1,21 +1,4 @@
-const eqArrays = function(actual, expected) {
-  if (!Array.isArray(actual) || !Array.isArray(expected)) {
-    return false;
-  }
-
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  return actual.every((elm, index) => elm === expected[index]);
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
-  const failed = `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
-
-  return eqArrays(actual, expected) ? passed : failed;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 const tail = function(arr) {
   if (arr.length === 0 || arr.length === 1) {
@@ -28,6 +11,7 @@ const tail = function(arr) {
   return tailOfArr;
 };
 
+console.log('tail tests --');
 console.log(assertArraysEqual(tail([1 ,2 ,3]), [2, 3]));
 console.log(assertArraysEqual(tail([]), []));
 console.log(assertArraysEqual(tail([1]), []));

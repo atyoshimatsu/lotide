@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
-  const failed = `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
-
-  return actual === expected ? passed : failed;
-};
-
+const assertEqual = require('./assertEqual');
 
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
@@ -21,6 +15,7 @@ const countOnly = function(allItems, itemsToCount) {
   return results;
 };
 
+console.log('countOnly tests --');
 const firstNames = [
   "Karl",
   "Salima",

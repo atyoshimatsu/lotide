@@ -1,21 +1,4 @@
-const eqArrays = function(actual, expected) {
-  if (!Array.isArray(actual) || !Array.isArray(expected)) {
-    return false;
-  }
-
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  return actual.every((elm, index) => elm === expected[index]);
-};
-
-const assertArraysEqual = function(actual, expected) {
-  const passed = `\u2705 Assertion Passed: [${actual}] === [${expected}]`;
-  const failed = `\u{1F534} Assertion Failed: [${actual}] !== [${expected}]`;
-
-  return eqArrays(actual, expected) ? passed : failed;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 const without = function(arr, rmv) {
   if (!Array.isArray(arr) || !Array.isArray(rmv)) {
@@ -24,6 +7,7 @@ const without = function(arr, rmv) {
   return arr.filter(elm => !rmv.includes(elm));
 };
 
+console.log('without tests --');
 console.log(assertArraysEqual(without([1, 2, 3, 1], [1]), [2, 3]));
 console.log(assertArraysEqual(without([1, 2, 3], [1, 4]), [2, 3]));
 console.log(assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]));
