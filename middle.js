@@ -14,9 +14,4 @@ const middle = function(arr) {
   return isEven ? [arr[middleIndex], arr[middleIndex + 1]] : [arr[middleIndex]];
 };
 
-console.log('middle tests --');
-console.log(assertArraysEqual(middle([]), []));
-console.log(assertArraysEqual(middle([0]), []));
-console.log(assertArraysEqual(middle([0, 1]), []));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]));
+module.exports = middle;
