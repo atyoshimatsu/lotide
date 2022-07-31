@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const assertEqual = require('../assertEqual');
+const assertEqual = require('../src/assertEqual');
 
 describe('assertEqual test', () => {
   it('should return passed for 0 and 0', () => {

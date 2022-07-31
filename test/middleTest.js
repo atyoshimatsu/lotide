@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const middle = require('../middle');
+const middle = require('../src/middle');
 
 describe('middle test', () => {
   it('should return [] for []', () => {

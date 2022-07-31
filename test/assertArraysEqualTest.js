@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const assertArraysEqual = require('../assertArraysEqual');
+const assertArraysEqual = require('../src/assertArraysEqual');
 
 describe('assertArraysEqual test', () => {
   it('should return passed for [], []', () => {
