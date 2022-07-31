@@ -7,7 +7,7 @@ describe('eqArrays test', () => {
   });
 
   it('should return false for [[2, 3], [4]], [[2, 3], [4, 5]]', () => {
-   assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
   });
 
   it('should false for [[2, 3], [4]], [[2, 3], 4]]', () => {

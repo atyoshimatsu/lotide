@@ -1,5 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
 const middle = function(arr) {
   if (!Array.isArray(arr)) {
     throw new Error('The argument is not Array');
