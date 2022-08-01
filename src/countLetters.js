@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 const countLetters = function(str) {
   const result = {};
   for (const char of str.replaceAll(' ', '')) {
