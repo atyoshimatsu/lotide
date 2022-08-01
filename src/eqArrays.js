@@ -7,12 +7,8 @@ const eqArrays = function(actual, expected) {
     return false;
   }
 
-  return actual.map((elm, index) => {
-    if (Array.isArray(elm)) {
-      return eqArrays(elm, expected[index]);
-    }
-    return elm === expected[index];
-  }).every(elm => elm === true);
+  return actual.map((elm, index) => Array.isArray(elm) ? eqArrays(elm, expected[index]) : elm === expected[index])
+    .every(elm => elm === true);
 };
 
 module.exports = eqArrays;
