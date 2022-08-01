@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 const findKeyByValue = function(obj, value) {
   for (const key in obj) {
     if (obj[key] === value) {
@@ -8,6 +6,8 @@ const findKeyByValue = function(obj, value) {
   }
   return undefined;
 };
+
+module.exports = findKeyByValue;
 
 console.log('findKeyByValue tests --');
 const bestTVShowsByGenre = {
