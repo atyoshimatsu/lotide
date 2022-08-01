@@ -21,7 +21,7 @@ describe('without test', () => {
   });
 
   it('should NOT modified original array', () => {
-    const original = [1, 2, 3]
+    const original = [1, 2, 3];
     without(original, [2, 3]); // returns [1]
     assert.deepEqual(original, [1, 2, 3]);
   });
