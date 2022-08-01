@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@at.yoshimatsu/lotide",
   "version": "1.0.0",
   "description": "",
   "main": "assertArraysEqual.js",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/atyoshimatsu/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "at.yoshimatsu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/atyoshimatsu/lotide/issues"
