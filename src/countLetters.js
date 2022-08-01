@@ -12,9 +12,4 @@ const countLetters = function(str) {
   return result;
 };
 
-console.log('countLetters tests --');
-const string = 'lighthouse in the house';
-const result1 = countLetters(string);
-console.log(assertEqual(result1['o'], 2));
-console.log(assertEqual(result1['e'], 3));
-console.log(assertEqual(result1[' '], undefined));
+module.exports = countLetters;
