@@ -42,4 +42,4 @@ The following functions are currently implemented:
 * `middle(arr)`: returns middle element(s) of given arr.
 * `tail(arr)`: returns elements of given arr except first element.
 * `takeUntile(arr, callback)`: returns elements of given arr untile satified the callback.
-* `without(arr1, arr2)`: returns elements of arr1 without arr2 elements.
+* `without(arr1, arr2)`: returns new array from arr1 excepting arr2 elements.
