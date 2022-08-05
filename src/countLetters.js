@@ -1,6 +1,6 @@
 const countLetters = function(str) {
   const result = {};
-  for (const char of str.replaceAll(' ', '')) {
+  for (const char of str.split(' ').join('')) {
     if (result[char]) {
       result[char] += 1;
     } else {
