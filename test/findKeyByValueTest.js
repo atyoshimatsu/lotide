@@ -8,6 +8,26 @@ describe('findKeyByValue test', () => {
     drama:  "The Wire"
   };
 
+  it('should return undefined for a function', () => {
+    const actual = findKeyByValue(1, 'The Wire');
+    assert.isUndefined(actual);
+  });
+
+  it('should return undefined for an array', () => {
+    const actual = findKeyByValue([1], 'The Wire');
+    assert.isUndefined(actual);
+  });
+
+  it('should return undefined for a function', () => {
+    const actual = findKeyByValue(() => {}, 'The Wire');
+    assert.isUndefined(actual);
+  });
+
+  it('should return undefined for "test"', () => {
+    const actual = findKeyByValue('test', 'The Wire');
+    assert.isUndefined(actual);
+  });
+
   it('should return a proper key for given an object and a value', () => {
     const actual = findKeyByValue(bestTVShowsByGenre, 'The Wire');
     assert.strictEqual(actual, 'drama');

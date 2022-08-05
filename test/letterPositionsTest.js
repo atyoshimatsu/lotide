@@ -2,6 +2,11 @@ const { assert } = require('chai');
 const letterPositions = require('../src/letterPositions');
 
 describe('letterPositions test', () => {
+  it('should return undefined for 1', () => {
+    const actual = letterPositions(1);
+    assert.isUndefined(actual);
+  });
+
   it('should return {} for ""', () => {
     const actual = letterPositions('');
     assert.deepEqual(actual, {});

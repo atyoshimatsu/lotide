@@ -1,4 +1,8 @@
 const letterPositions = function(sentence) {
+  if (typeof sentence !== 'string') {
+    return;
+  }
+
   const results = {};
 
   for (let i = 0; i < sentence.length; i += 1) {

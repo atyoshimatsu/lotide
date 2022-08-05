@@ -1,4 +1,8 @@
 const countOnly = function(allItems, itemsToCount) {
+  if (!Array.isArray(allItems)) {
+    return;
+  }
+
   const results = {};
   const items = allItems.filter(item => itemsToCount[item]);
 

@@ -2,6 +2,11 @@ const { assert } = require('chai');
 const countOnly = require('../src/countOnly');
 
 describe('countOnly test', () => {
+  it('should return undefined for 1', () => {
+    const actual = countOnly(1);
+    assert.isUndefined(actual);
+  });
+
   it('should return {} for []', () => {
     const actual = countOnly([]);
     assert.deepEqual(actual, {});

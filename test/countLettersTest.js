@@ -2,6 +2,11 @@ const { assert } = require('chai');
 const countLetters = require('../src/countLetters');
 
 describe('countLetters test', () => {
+  it('should return undefined for []', () => {
+    const actual = countLetters([]);
+    assert.isUndefined(actual);
+  });
+
   it('should return {} for ""', () => {
     const actual = countLetters('');
     assert.deepEqual(actual, {});

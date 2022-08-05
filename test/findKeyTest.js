@@ -2,6 +2,26 @@ const { assert } = require('chai');
 const findKey = require('../src/findKey');
 
 describe('findKey test', () => {
+  it('should return undefined for a function', () => {
+    const actual = findKey(1, x => x.stars === 2);
+    assert.isUndefined(actual);
+  });
+
+  it('should return undefined for an array', () => {
+    const actual = findKey([1], x => x.stars === 2);
+    assert.isUndefined(actual);
+  });
+
+  it('should return undefined for a function', () => {
+    const actual = findKey(() => {}, x => x.stars === 2);
+    assert.isUndefined(actual);
+  });
+
+  it('should return undefined for "test"', () => {
+    const actual = findKey('test', x => x.stars === 2);
+    assert.isUndefined(actual);
+  });
+
   it('should return a proper key for given an object and a calllback', () => {
     const stars = {
       "Blue Hill": { stars: 1 },

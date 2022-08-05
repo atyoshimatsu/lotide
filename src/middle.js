@@ -1,6 +1,6 @@
 const middle = function(arr) {
   if (!Array.isArray(arr)) {
-    return undefined;
+    return;
   }
 
   if ([0, 1, 2].includes(arr.length)) {
