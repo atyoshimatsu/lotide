@@ -2,6 +2,10 @@ const { assert } = require('chai');
 const middle = require('../src/middle');
 
 describe('middle test', () => {
+  it('should return undefined for 1', () => {
+    assert.isUndefined(middle(1));
+  });
+
   it('should return [] for []', () => {
     assert.deepEqual(middle([]), []);
   });

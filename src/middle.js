@@ -1,6 +1,6 @@
 const middle = function(arr) {
   if (!Array.isArray(arr)) {
-    throw new Error('The argument is not Array');
+    return undefined;
   }
 
   if ([0, 1, 2].includes(arr.length)) {

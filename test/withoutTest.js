@@ -2,6 +2,11 @@ const { assert } = require('chai');
 const without = require('../src/without');
 
 describe('without test', () => {
+  it('should return undefined for 1, [1]', () => {
+    const actual = without(1, [1]);
+    assert.isUndefined(actual);
+  });
+
   it('should return [2, 3] for [1, 2, 3, 1], [1]', () => {
     const actual = without([1, 2, 3, 1], [1]);
     const expected = [2, 3];
